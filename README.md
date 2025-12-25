@@ -8,4 +8,11 @@
 
 => You can view your form submissions from shopify in Google Form Response Sheets.
 
-You can do it yourself using the code or if you need my assistance you can contact me on my whatsapp: +92 307 065 9485
+You can do it yourself using the code or if you need my assistance you can contact me.
+
+Kind Regards,
+Ghulam Muhiaudin
+Email: muhiaudin@hotmail.com
+Whatsapp: +92 307 065 9485
+Facebook: fb.me/chandonline
+Instagram: @ghulammuhiaudin
