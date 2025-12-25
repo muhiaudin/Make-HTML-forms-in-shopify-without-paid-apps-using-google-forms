@@ -2,9 +2,45 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name=""
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scaleable=no"/>
+  <title>Make HTML forms in shopify using google forms without paid apps</title>
 </head>
 <body>
-  
+  <div class="form-container">
+    <form action="#" method="POST" id="ss-form">
+      <div class="section section-team-selector">
+        <div class="field">
+          <label for="field1">Select Option</label>
+          <select name="field1" id="field1" required="">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3" selected>Option 3</option>
+            <option value="option4">Option 4</option>
+            <option value="option5">Option 5</option>
+            <option value="option6">Option 6</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="field2">Sample Text Field</label>
+          <input type="text" name="field2" id="field2" required="">
+        </div>
+        <div class="field">
+          <label for="field3">Sample Email</label>
+          <input type="email" name="field3" id="field3" pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" required="">
+        </div>
+        <div class="field">
+          <label for="field4">Sample Checkbox</label>
+          <input type="checkbox" name="field4" id="field4" value="1" required="">
+        </div>
+        <div class="field">
+          <label for="field5">Sample Radio Button</label>
+          <input type="radio" name="field5" id="field5" required="">
+        </div>
+        <div class="field submit-button">
+          <p class="Button Button--primary submit-form">Submit</p>
+        </div>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
