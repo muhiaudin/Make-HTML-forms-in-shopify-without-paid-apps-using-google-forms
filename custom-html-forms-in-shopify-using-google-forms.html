@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scaleable=no"/>
   <title>Make HTML forms in shopify using google forms without paid apps</title>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
   <div class="form-container">
@@ -34,7 +35,8 @@
         </div>
         <div class="field">
           <label for="field5">Sample Radio Button</label>
-          <input type="radio" name="field5" id="field5" required="">
+          <input type="radio" name="field5" id="field5" value="1" required="">
+          <input type="radio" name="field5" id="field5_1" value="2" required="">
         </div>
         <div class="field submit-button">
           <p class="Button Button--primary submit-form">Submit</p>
@@ -42,5 +44,43 @@
       </div>
     </form>
   </div>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.submit-form').click(function(){
+        if ($("#ss-form")[0].checkValidity()){
+          $('#ss-form').hide();
+          //selector from your HTML form
+          $('#ss-form').submit(function(e) {
+            //prevent the form from submiting so we can post to the google form
+            e.preventDefault();
+            //AJAX request
+            $.ajax({
+              url: 'https://docs.google.com/forms/u/0/d/e/REPLACE-WITH-YOUR-FORM-RESPONSE-LINK/formResponse',
+              data: $('#ss-form').serialize(),
+              type: 'POST',
+              dataType: "json",
+              statusCode: {
+                0: function(data) {
+                  //success
+                  $('.form-container').after('<div class="submitmsg"><span class="successtext">Success! Thank you for your enquiry.</span></div>');
+                },
+                200: function(data) {
+                  //success
+                  $('.form-container').after('<div class="submitmsg"><span class="successtext">Success! Thank you for your enquiry.</span></div>');
+                },
+                403: function(data) {
+                  //error
+                  $('.form-container').after('<div class="submitsmsg">OOPS!!! Something is not correct</div>');
+                }
+              }  
+            });
+          });
+          $('#ss-form').submit();
+        }else{
+          $("#ss-form")[0].reportValidity()
+        }
+      });
+    });
+  </script>
 </body>
 </html>
